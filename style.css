@@ -137,3 +137,7 @@ button:hover {
 #result-box h2 {
   margin-left: 20px; /* adjust the value as needed (20-50px) */
 }
+#risk-level {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
