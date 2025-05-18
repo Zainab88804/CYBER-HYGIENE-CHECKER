@@ -150,18 +150,39 @@ function showResult() {
 
   nextBtn.classList.add("hidden");
   resultBox.classList.remove("hidden");
+  const templateParams = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    score: `${score} out of ${questions.length}`
+  };
+
+  emailjs.send('service_jd8u9bh', 'template_k4j4o58', templateParams)
+    .then(function(response) {
+      console.log("Email sent successfully", response.status, response.text);
+    }, function(error) {
+      console.error("Failed to send email", error);
+    });
 }
 
 loginBtn.addEventListener("click", () => {
-  userName = document.getElementById("name").value;
+  const userNameInput = document.getElementById("name").value.trim();
+  const emailInput = document.getElementById("email").value.trim();
 
-  if (userName) {
-    loginForm.classList.add("hidden");
-    quizBox.classList.remove("hidden");
-    showQuestion();
-  } else {
+  if (!userNameInput) {
     alert("Please enter your name.");
+    return;
   }
+  
+  if (!emailInput) {
+    alert("Please enter your email.");
+    return;
+  }
+
+  userName = userNameInput;
+  email= emailInput;
+  loginForm.classList.add("hidden");
+  quizBox.classList.remove("hidden");
+  showQuestion();
 });
 
 nextBtn.addEventListener("click", () => {
