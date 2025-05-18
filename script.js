@@ -147,6 +147,19 @@ function showResult() {
   questionEl.textContent = "Completed!";
   const percentage = Math.round((score / questions.length) * 100);
   optionsEl.innerHTML = `🎉 You got ${score} out of ${questions.length} correct.<br><br>Your hygiene is ${percentage}%`;
+  const riskLevel = document.getElementById("risk-level");
+  const scoreDisplay = document.getElementById("score-display");
+
+  if (score <= 4) {
+    riskLevel.textContent = "🔴 High Risk: Please improve your cyber hygiene!";
+    riskLevel.style.color = "red";
+  } else if (score <= 7) {
+    riskLevel.textContent = "🟠 Medium Risk: You need to improve your cyber hygiene.";
+    riskLevel.style.color = "orange";
+  } else {
+    riskLevel.textContent = "🟢 Low Risk: Great job! Your cyber hygiene is good.";
+    riskLevel.style.color = "green";
+  }
 
   nextBtn.classList.add("hidden");
   resultBox.classList.remove("hidden");
