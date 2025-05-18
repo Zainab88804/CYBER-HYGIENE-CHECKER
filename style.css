@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('https://pecb.com/article_docs/images/C9F2E90B86C762E5CFF56618FDE0CC12.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  color: #00e5ff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 1.3rem;
+  color: #d0f0ff;
+}
+
+.quiz-container {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.coming-soon {
+  font-size: 1.25rem;
+  color: #e0f7fa;
+}
+button {
+  padding: 12px 25px;
+  margin-top: 20px;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+#quiz-box {
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#question {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#options button {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+}
+/* Correct and wrong answer colors */
+.option-btn.correct {
+  background-color: #4CAF50 !important; /* Green */
+  color: white;
+}
+
+.option-btn.wrong {
+  background-color: #f44336 !important; /* Red */
+  color: white;
+}
+
+/* Ensure all option buttons have base styling */
+.option-btn {
+  padding: 10px 20px;
+  margin: 10px auto;
+  width: 100%;
+  border: none;
+  background-color: #eee;
+  color: black;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Feedback text after answer */
+.feedback {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+
+#result-box h2 {
+  margin-left: 20px; /* adjust the value as needed (20-50px) */
+}
