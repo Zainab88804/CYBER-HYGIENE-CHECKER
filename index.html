@@ -6,12 +6,6 @@
   <title>Cyber Hygiene Checker</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("DCLsFJiXSZ6O0awyT"); // 🔁 Replace with your EmailJS public key
-    })();
-  </script>
 </head>
 <body>
   <div class="overlay">
@@ -23,7 +17,6 @@
     <!-- Login Form -->
     <div id="login-form">
       <input type="text" id="name" placeholder="Enter your name" required>
-      <input type="email" id="email" placeholder="Enter your email" required>
       <button id="login-btn">Start Quiz</button>
     </div>
 
@@ -38,7 +31,7 @@
     <div id="result-box" class="hidden">
       <h2>Thanks for checking your cyber hygiene!</h2>
       <h3 id="score-display"></h3>
-  <p id="risk-level"></p>
+      <p id="risk-level"></p>
     </div>
   </div>
 
