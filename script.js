@@ -147,6 +147,7 @@ function showResult() {
   questionEl.textContent = "Completed!";
   const percentage = Math.round((score / questions.length) * 100);
   optionsEl.innerHTML = `🎉 You got ${score} out of ${questions.length} correct.<br><br>Your hygiene is ${percentage}%`;
+
   const riskLevel = document.getElementById("risk-level");
   const scoreDisplay = document.getElementById("score-display");
 
@@ -163,36 +164,17 @@ function showResult() {
 
   nextBtn.classList.add("hidden");
   resultBox.classList.remove("hidden");
-  const templateParams = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    score: `${score} out of ${questions.length}`
-  };
-
-  emailjs.send('service_jd8u9bh','template_k4j4o58', templateParams)
-    .then(function(response) {
-      console.log("Email sent successfully", response.status, response.text);
-    }, function(error) {
-      console.error("Failed to send email", error);
-    });
 }
 
 loginBtn.addEventListener("click", () => {
   const userNameInput = document.getElementById("name").value.trim();
-  const emailInput = document.getElementById("email").value.trim();
 
   if (!userNameInput) {
     alert("Please enter your name.");
     return;
   }
-  
-  if (!emailInput) {
-    alert("Please enter your email.");
-    return;
-  }
 
   userName = userNameInput;
-  email= emailInput;
   loginForm.classList.add("hidden");
   quizBox.classList.remove("hidden");
   showQuestion();
@@ -204,5 +186,6 @@ nextBtn.addEventListener("click", () => {
     showQuestion();
   } else {
     showResult();
+    document.getElementById("user-name").textContent = userName;
   }
 });
