@@ -17,7 +17,6 @@
     <!-- Login Form -->
     <div id="login-form">
       <input type="text" id="name" placeholder="Enter your name" required>
-      <input type="email" id="email" placeholder="Enter your email" required>
       <button id="login-btn">Start Quiz</button>
     </div>
 
@@ -30,13 +29,12 @@
 
     <!-- Final Message -->
     <div id="result-box" class="hidden">
-      <h2>Thanks for checking your cyber hygiene!</h2>
+      <h2 id="final-message"><span id="user-name"></span>, thanks for checking your cyber hygiene!</h2>
       <h3 id="score-display"></h3>
-  <p id="risk-level"></p>
+      <p id="risk-level"></p>
     </div>
   </div>
 
-  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
