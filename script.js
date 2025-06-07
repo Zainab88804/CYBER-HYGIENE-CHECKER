@@ -169,14 +169,6 @@ function showResult() {
     score: `${score} out of ${questions.length}`
   };
 
-  emailjs.send('service_jd8u9bh', 'template_k4j4o58', templateParams)
-    .then(function(response) {
-      console.log("Email sent successfully", response.status, response.text);
-    }, function(error) {
-      console.error("Failed to send email", error);
-    });
-}
-
 loginBtn.addEventListener("click", () => {
   const userNameInput = document.getElementById("name").value.trim();
   const emailInput = document.getElementById("email").value.trim();
